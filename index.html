@@ -128,6 +128,37 @@ body[data-theme=light] .focus-icon{border-color:var(--accent)}
   .skill{min-height:220px}
 }
 
+
+/* Motion-led technical hero and refined interaction layer */
+.hero{isolation:isolate}
+.hero:before{content:"";position:absolute;inset:8% 0 4%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 73% 45%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 42%),linear-gradient(115deg,transparent 35%,color-mix(in srgb,var(--accent2) 7%,transparent));}
+.hero-art:before{content:"";position:absolute;width:min(460px,95%);aspect-ratio:1;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);box-shadow:0 0 0 24px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 58px color-mix(in srgb,var(--accent2) 5%,transparent);animation:orbitPulse 6s ease-in-out infinite;pointer-events:none}
+.hero-art:after{content:"";position:absolute;width:min(500px,100%);height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);transform:rotate(-28deg);opacity:.5;animation:scanLine 5s ease-in-out infinite;pointer-events:none}
+@keyframes orbitPulse{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.04);opacity:1}}
+@keyframes scanLine{0%,100%{translate:0 -75px;opacity:0}35%,65%{opacity:.55}50%{translate:0 75px}}
+.hero h1 .typing-char{display:inline-block;opacity:0;transform:translateY(12px);animation:charEnter .42s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--delay)}
+@keyframes charEnter{to{opacity:1;transform:translateY(0)}}
+.tech-marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);padding:16px 0;position:relative}
+.tech-marquee-track{display:flex;width:max-content;gap:34px;align-items:center;animation:marqueeMove 32s linear infinite}
+.tech-marquee:hover .tech-marquee-track{animation-play-state:paused}
+.tech-marquee span{font:600 10px var(--mono);letter-spacing:.13em;color:var(--muted);white-space:nowrap}
+.tech-marquee b{color:var(--accent);font-size:15px}
+@keyframes marqueeMove{to{transform:translateX(-50%)}}
+.hero-actions .btn,.control,.filter,.device,.command-chips button{transition:all .25s cubic-bezier(.2,.8,.2,1)}
+.btn.primary{box-shadow:0 8px 25px color-mix(in srgb,var(--accent) 18%,transparent)}
+.btn.primary:hover{box-shadow:0 12px 32px color-mix(in srgb,var(--accent) 28%,transparent)}
+.project,.skill,.career,.panel,.education{box-shadow:0 12px 34px rgba(0,0,0,.06)}
+.project:hover,.skill:hover,.career:hover{box-shadow:0 20px 46px color-mix(in srgb,var(--accent) 12%,transparent)}
+.whatsapp-link{border-color:#299d68!important}
+.whatsapp-link span:first-child{color:#27a66c!important}
+.whatsapp-link:hover{background:color-mix(in srgb,#27a66c 9%,var(--surface))}
+.footer-credit a{color:var(--accent);font-weight:700;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent);text-underline-offset:4px}
+.footer-credit a:hover{color:var(--accent2)}
+body[data-theme=light] .tech-marquee{background:#fff}
+body[data-theme=light] .hero:before{background:radial-gradient(ellipse at 73% 45%,rgba(89,109,22,.11),transparent 42%),linear-gradient(115deg,transparent 35%,rgba(169,78,36,.045))}
+@media(max-width:620px){.hero-art:before{width:285px}.hero-art:after{width:300px}.tech-marquee{padding:13px 0}}
+@media(prefers-reduced-motion:reduce){.hero-art:before,.hero-art:after,.tech-marquee-track{animation:none!important}}
+
 </style>
 </head>
 <body data-theme="dark">
@@ -145,8 +176,11 @@ body[data-theme=light] .focus-icon{border-color:var(--accent)}
 <div class="hero-actions"><a class="btn primary" href="#projects" data-en="Explore projects ↘" data-ar="استكشف المشاريع ↙">استكشف المشاريع ↙</a><a class="btn" href="#contact" data-en="Get in touch ↗" data-ar="تواصل معي ↗">تواصل معي ↗</a></div>
 <div class="hero-stats"><div class="stat"><strong>04</strong><span data-en="TECHNICAL FIELDS" data-ar="مجالات تقنية">مجالات تقنية</span></div><div class="stat"><strong>08+</strong><span data-en="PROJECT CONCEPTS" data-ar="مشاريع تقنية">مشاريع تقنية</span></div><div class="stat"><strong>∞</strong><span data-en="LEARNING MODE" data-ar="التعلم المستمر">التعلم المستمر</span></div></div>
 </div>
-<div class="hero-art"><div class="art-index">PORTFOLIO / SA-026</div><div class="art-caption">ENGINEERING MINDSET — BUILD / TEST / IMPROVE</div><div class="portrait-frame"><img class="portrait" src="assets/salah-portrait.webp" alt="Salah Al-Asbahi" onerror="this.src='assets/salah-avatar.svg'"><div class="photo-label">IT / NETWORKS / AI</div></div><div class="crosshair"></div></div>
+<div class="hero-art"><div class="art-index" hidden>PORTFOLIO / SA-026</div><div class="art-caption" hidden>ENGINEERING MINDSET — BUILD / TEST / IMPROVE</div><div class="portrait-frame"><img class="portrait" src="assets/salah-portrait.webp" alt="Salah Al-Asbahi" onerror="this.src='assets/salah-avatar.svg'"><div class="photo-label">IT / NETWORKS / AI</div></div></div>
 </section>
+<div class="tech-marquee" aria-label="Technical capabilities"><div class="tech-marquee-track">
+<span>NETWORK ENGINEERING</span><b>✳</b><span>CISCO</span><b>✳</b><span>ROUTING & SWITCHING</span><b>✳</b><span>PYTHON</span><b>✳</b><span>AI AGENTS</span><b>✳</b><span>FLUTTER</span><b>✳</b><span>IT SUPPORT</span><b>✳</b><span>AUTOMATION</span><b>✳</b><span>NETWORK ENGINEERING</span><b>✳</b><span>CISCO</span><b>✳</b><span>ROUTING & SWITCHING</span><b>✳</b><span>PYTHON</span><b>✳</b><span>AI AGENTS</span><b>✳</b><span>FLUTTER</span><b>✳</b><span>IT SUPPORT</span><b>✳</b><span>AUTOMATION</span><b>✳</b>
+</div></div>
 <section class="section" id="about"><div class="wrap"><div class="section-heading"><div class="section-no">01 / PROFILE</div><h2 data-en="Curiosity meets<br>technical thinking." data-ar="فضول معرفي،<br>وتفكير تقني.">فضول معرفي،<br>وتفكير تقني.</h2><p data-en="A practical path across infrastructure, support, software and intelligent automation." data-ar="مسار عملي يجمع بين البنية التحتية والدعم الفني والبرمجيات والأتمتة الذكية.">مسار عملي يجمع بين البنية التحتية والدعم الفني والبرمجيات والأتمتة الذكية.</p></div>
 <div class="about-grid"><div class="panel"><p data-ar="أدرس تقنية المعلومات في جامعة تعز – فرع التربة. أعمل على تطوير قاعدة معرفية وعملية في شبكات الحاسوب، إدارة أنظمة التشغيل، الدعم الفني والبرمجة. يهمني فهم سبب المشكلة قبل معالجتها، وتصميم حلول يمكن الاعتماد عليها وتطويرها." data-en="I study Information Technology at Taiz University – Al-Turbah Branch. I am developing practical knowledge in computer networks, operating systems, IT support and programming. I value understanding the root cause before solving a problem, and designing solutions that can be maintained and improved.">أدرس تقنية المعلومات في جامعة تعز – فرع التربة. أعمل على تطوير قاعدة معرفية وعملية في شبكات الحاسوب، إدارة أنظمة التشغيل، الدعم الفني والبرمجة. يهمني فهم سبب المشكلة قبل معالجتها، وتصميم حلول يمكن الاعتماد عليها وتطويرها.</p></div>
 <div class="panel focus-list"><div class="focus"><span class="focus-icon">01</span><div><b data-en="Network Engineering" data-ar="هندسة الشبكات">هندسة الشبكات</b><small data-en="Infrastructure, routing, switching and services" data-ar="البنية التحتية والتوجيه والتحويل والخدمات">البنية التحتية والتوجيه والتحويل والخدمات</small></div></div><div class="focus"><span class="focus-icon">02</span><div><b data-en="IT Technical Support" data-ar="الدعم الفني">الدعم الفني</b><small data-en="Diagnostics, operating systems and user support" data-ar="التشخيص وأنظمة التشغيل ودعم المستخدمين">التشخيص وأنظمة التشغيل ودعم المستخدمين</small></div></div><div class="focus"><span class="focus-icon">03</span><div><b data-en="Software & AI" data-ar="البرمجيات والذكاء الاصطناعي">البرمجيات والذكاء الاصطناعي</b><small data-en="Applications, agents and workflow automation" data-ar="التطبيقات والوكلاء وأتمتة سير العمل">التطبيقات والوكلاء وأتمتة سير العمل</small></div></div></div></div></div></section>
@@ -175,19 +209,38 @@ body[data-theme=light] .focus-icon{border-color:var(--accent)}
 <div class="lab-grid"><div class="network-lab"><div class="lab-head"><span>NETWORK TOPOLOGY / LAB-01</span><span>● ONLINE</span></div><div class="network-flow"><button class="device active" data-device="router"><span class="device-icon">⌁</span><b>ROUTER</b><small>WAN</small></button><span class="wire"></span><button class="device" data-device="firewall"><span class="device-icon">⬡</span><b>FIREWALL</b><small>SECURITY</small></button><span class="wire"></span><button class="device" data-device="switch"><span class="device-icon">▦</span><b>SWITCH</b><small>LAN</small></button><span class="wire"></span><button class="device" data-device="server"><span class="device-icon">▤</span><b>SERVER</b><small>HOST</small></button></div><div class="device-info"><small id="deviceType">NETWORK DEVICE / ROUTER</small><h3 id="deviceTitle">Router</h3><p id="deviceDesc">يربط بين الشبكات المختلفة ويوجه حزم البيانات اعتماداً على معلومات التوجيه، وغالباً يعمل بوابةً بين الشبكة المحلية والشبكات الأخرى.</p><div class="device-tags" id="deviceTags"><span>Routing</span><span>IP Forwarding</span><span>Gateway</span></div></div></div>
 <div class="terminal"><div class="terminal-head"><span class="lights"><i></i><i></i><i></i></span><span>visitor@Salah:~ / learning-shell</span><span>LOCAL</span></div><div class="terminal-output" id="terminalOutput"><p class="term-response">Salah Technical Console v1.0</p><p class="term-response">Type <b>help</b> to list available commands.</p><p class="term-prompt">visitor@salah:~$ _</p></div><form class="terminal-form" id="terminalForm"><input id="terminalInput" autocomplete="off" spellcheck="false" placeholder="type a command..." aria-label="Terminal command"><button type="submit">RUN ↵</button></form><div class="command-chips"><button type="button" data-command="help">help</button><button type="button" data-command="skills">skills</button><button type="button" data-command="projects">projects</button><button type="button" data-command="contact">contact</button><button type="button" data-command="clear">clear</button></div></div></div></div></section>
 <section class="section" id="education"><div class="wrap"><div class="section-heading"><div class="section-no">06 / EDUCATION</div><h2 data-en="Academic background." data-ar="المسار الأكاديمي.">المسار الأكاديمي.</h2><p data-en="Building a strong foundation in information technology and its practical disciplines." data-ar="بناء أساس أكاديمي وعملي في تقنية المعلومات وتخصصاتها.">بناء أساس أكاديمي وعملي في تقنية المعلومات وتخصصاتها.</p></div><div class="education"><div class="edu-mark">B.Sc.<br>IT / 01</div><div><h3 data-en="Bachelor of Information Technology" data-ar="بكالوريوس تقنية المعلومات">بكالوريوس تقنية المعلومات</h3><p data-en="Taiz University — Al-Turbah Branch · Yemen" data-ar="جامعة تعز – فرع التربة · اليمن">جامعة تعز – فرع التربة · اليمن</p></div></div></div></section>
-<section class="section" id="contact"><div class="wrap contact-grid"><div><div class="section-no">07 / CONTACT</div><h2 class="contact-title" data-en="Let's build<br>something useful." data-ar="لنبنِ شيئاً<br>تقنياً مفيداً.">لنبنِ شيئاً<br>تقنياً مفيداً.</h2><p class="contact-copy" data-en="For collaboration, technical opportunities or inquiries, feel free to get in touch." data-ar="للتعاون أو الفرص التقنية أو الاستفسارات، يسعدني تواصلك.">للتعاون أو الفرص التقنية أو الاستفسارات، يسعدني تواصلك.</p><a class="btn primary" href="mailto:salah775kh@gmail.com?subject=CV%20Request" data-en="Request my CV ↗" data-ar="طلب السيرة الذاتية ↗">طلب السيرة الذاتية ↗</a></div><div class="contact-list"><a class="contact-link" href="mailto:salah775kh@gmail.com"><span>EMAIL</span><span>salah775kh@gmail.com ↗</span></a><a class="contact-link" href="tel:+967775899576"><span>PHONE</span><span>+967 775 899 576 ↗</span></a><a class="contact-link" href="https://wa.me/967775899576" target="_blank" rel="noreferrer"><span>WHATSAPP</span><span>START A CHAT ↗</span></a></div></div></section>
+<section class="section" id="contact"><div class="wrap contact-grid"><div><div class="section-no">07 / CONTACT</div><h2 class="contact-title" data-en="Let's build<br>something useful." data-ar="لنبنِ شيئاً<br>تقنياً مفيداً.">لنبنِ شيئاً<br>تقنياً مفيداً.</h2><p class="contact-copy" data-en="For collaboration, technical opportunities or inquiries, feel free to get in touch." data-ar="للتعاون أو الفرص التقنية أو الاستفسارات، يسعدني تواصلك.">للتعاون أو الفرص التقنية أو الاستفسارات، يسعدني تواصلك.</p><a class="btn primary" href="mailto:salah775kh@gmail.com?subject=CV%20Request" data-en="Request my CV ↗" data-ar="طلب السيرة الذاتية ↗">طلب السيرة الذاتية ↗</a></div><div class="contact-list"><a class="contact-link" href="mailto:salah775kh@gmail.com"><span>EMAIL</span><span>salah775kh@gmail.com ↗</span></a><a class="contact-link" href="tel:+967775899576"><span>PHONE</span><span>+967 775 899 576 ↗</span></a><a class="contact-link" href="https://wa.me/967775899576?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B5%D9%84%D8%A7%D8%AD%D8%8C%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%D9%83%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83.%20%D9%83%D9%8A%D9%81%20%D8%A3%D8%B3%D8%AA%D8%B7%D9%8A%D8%B9%20%D8%A7%D9%84%D8%A8%D8%AF%D8%A1%D8%9F" target="_blank" rel="noreferrer" class="contact-link whatsapp-link"><span>WHATSAPP</span><span>رسالة ترحيبية جاهزة ↗</span></a></div></div></section>
 </main>
-<footer><div class="wrap footer-inner"><span>© <span id="year"></span> SALAH AL-ASBAHI</span><span>DESIGNED FOR TECHNOLOGY · YEMEN</span></div></footer>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> SALAH AL-ASBAHI</span><span class="footer-credit">برمجة المهندس <a href="https://moatasem.vercel.app/" target="_blank" rel="noopener noreferrer">معتصم المسني</a></span></div></footer>
 <button class="backtop" id="backtop" aria-label="Back to top">↑</button>
 <script>
 const body=document.body,htmlEl=document.documentElement;
+const heroName=document.querySelector('.hero h1');
+function animateHeroName(){
+ if(!heroName)return;
+ const template=heroName.dataset[lang]||heroName.innerHTML;
+ heroName.innerHTML=template;
+ const walker=document.createTreeWalker(heroName,NodeFilter.SHOW_TEXT);
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ let index=0;
+ nodes.forEach(node=>{
+  const fragment=document.createDocumentFragment();
+  [...node.textContent].forEach(char=>{
+   const span=document.createElement('span');span.className='typing-char';span.textContent=char;
+   span.style.setProperty('--delay',(index++ * 52)+'ms');fragment.append(span);
+  });
+  node.replaceWith(fragment);
+ });
+}
+
 const themeBtn=document.getElementById('theme'),langBtn=document.getElementById('language'),menuBtn=document.getElementById('menu'),nav=document.getElementById('nav');
 let lang='ar';
 function setTheme(value){body.dataset.theme=value;themeBtn.textContent=value==='dark'?'☼':'◐';try{localStorage.setItem('salah-theme',value)}catch(e){}}
 try{setTheme(localStorage.getItem('salah-theme')||'dark')}catch(e){setTheme('dark')}
 themeBtn.addEventListener('click',()=>setTheme(body.dataset.theme==='dark'?'light':'dark'));
-function setLanguage(next){lang=next;const ar=next==='ar';htmlEl.lang=next;htmlEl.dir=ar?'rtl':'ltr';document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.innerHTML=el.dataset[next]);langBtn.textContent=ar?'EN':'عربي';document.title=ar?'صلاح الأصبحي | الملف التقني':'Salah Al-Asbahi | Technical Portfolio';}
+function setLanguage(next){lang=next;const ar=next==='ar';htmlEl.lang=next;htmlEl.dir=ar?'rtl':'ltr';document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.innerHTML=el.dataset[next]);langBtn.textContent=ar?'EN':'عربي';document.title=ar?'صلاح الأصبحي | الملف التقني':'Salah Al-Asbahi | Technical Portfolio';animateHeroName();}
 langBtn.addEventListener('click',()=>setLanguage(lang==='ar'?'en':'ar'));
+animateHeroName();
 menuBtn.addEventListener('click',()=>{nav.classList.toggle('open');menuBtn.textContent=nav.classList.contains('open')?'✕':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.getElementById('year').textContent=new Date().getFullYear();
