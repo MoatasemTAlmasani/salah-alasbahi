@@ -170,6 +170,30 @@ body[data-theme=light] .hero:before{background:radial-gradient(ellipse at 73% 45
 @media(max-width:620px){.hero-art:before{width:285px}.hero-art:after{width:300px}.tech-marquee{padding:13px 0}}
 @media(prefers-reduced-motion:reduce){.hero-art:before,.hero-art:after,.tech-marquee-track{animation:none!important}}
 
+
+/* Refined editorial surfaces and technical ticker */
+.tech-marquee{padding:19px 0;background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 5%,var(--surface)),var(--surface) 48%,color-mix(in srgb,var(--accent2) 5%,var(--surface)));border-block:1px solid color-mix(in srgb,var(--accent) 24%,var(--line))}
+.tech-marquee-track{gap:27px}
+.tech-marquee span{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.1em}
+.tech-marquee span i{display:inline-grid;place-items:center;width:27px;height:27px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:50%;font:600 14px var(--mono);font-style:normal;color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.tech-marquee b{font-size:12px;opacity:.55}
+/* Cards become soft, layered editorial panels rather than rigid boxes */
+.skill,.career,.project,.panel,.education{border:1px solid color-mix(in srgb,var(--line) 72%,transparent);border-radius:22px;background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 96%,var(--accent) 4%),var(--surface));box-shadow:0 14px 38px rgba(0,0,0,.09);}
+.skill,.career,.project{position:relative;overflow:hidden}
+.skill:before,.career:before,.project:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.55}
+.skill:hover,.career:hover,.project:hover{border-color:color-mix(in srgb,var(--accent) 65%,var(--line));transform:translateY(-6px);box-shadow:0 24px 55px color-mix(in srgb,var(--accent) 10%,transparent)}
+.tag{border-radius:999px;background:color-mix(in srgb,var(--surface2) 60%,transparent);padding:6px 11px}
+.project-state{border-radius:999px;padding:5px 11px}
+.panel{padding:30px;border-radius:26px}
+.education{border-radius:26px;padding:30px}
+.contact-link{border:0;border-bottom:1px solid var(--line);background:transparent;padding:19px 5px;border-radius:0;transition:padding .25s,color .25s}
+.contact-link:hover{padding-inline:13px;background:color-mix(in srgb,var(--accent) 5%,transparent);border-color:var(--accent);border-radius:12px}
+footer{border-top:1px solid var(--line);padding:34px 0 28px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--surface) 60%,transparent))}
+.footer-inner{display:flex;flex-direction:column;justify-content:center;gap:9px;text-align:center}
+.footer-rights{font-size:11px;letter-spacing:.01em;color:var(--text)}
+.footer-credit{font-size:11px;color:var(--muted)}
+.footer-credit a{font-weight:800}
+@media(max-width:620px){.tech-marquee{padding:14px 0}.tech-marquee span{font-size:9px}.skill,.career,.project,.panel,.education{border-radius:18px}.footer-inner{gap:8px}}
 </style>
 </head>
 <body data-theme="dark">
@@ -190,7 +214,8 @@ body[data-theme=light] .hero:before{background:radial-gradient(ellipse at 73% 45
 <div class="hero-art"><div class="art-index" hidden>PORTFOLIO / SA-026</div><div class="art-caption" hidden>ENGINEERING MINDSET — BUILD / TEST / IMPROVE</div><div class="portrait-frame"><img class="portrait" src="assets/salah-portrait.webp" alt="Salah Al-Asbahi" onerror="this.src='assets/salah-avatar.svg'"><div class="photo-label">IT / NETWORKS / AI</div></div></div>
 </section>
 <div class="tech-marquee" aria-label="Technical capabilities"><div class="tech-marquee-track">
-<span>NETWORK ENGINEERING</span><b>✳</b><span>CISCO</span><b>✳</b><span>ROUTING & SWITCHING</span><b>✳</b><span>PYTHON</span><b>✳</b><span>AI AGENTS</span><b>✳</b><span>FLUTTER</span><b>✳</b><span>IT SUPPORT</span><b>✳</b><span>AUTOMATION</span><b>✳</b><span>NETWORK ENGINEERING</span><b>✳</b><span>CISCO</span><b>✳</b><span>ROUTING & SWITCHING</span><b>✳</b><span>PYTHON</span><b>✳</b><span>AI AGENTS</span><b>✳</b><span>FLUTTER</span><b>✳</b><span>IT SUPPORT</span><b>✳</b><span>AUTOMATION</span><b>✳</b>
+<span><i>⌘</i> NETWORK ENGINEERING</span><b>◇</b><span><i>⌬</i> CISCO</span><b>◇</b><span><i>⇄</i> ROUTING & SWITCHING</span><b>◇</b><span><i>⌨</i> PYTHON</span><b>◇</b><span><i>◈</i> AI AGENTS</span><b>◇</b><span><i>▱</i> FLUTTER</span><b>◇</b><span><i>⚙</i> IT SUPPORT</span><b>◇</b><span><i>⟲</i> AUTOMATION</span><b>◇</b>
+<span><i>⌘</i> NETWORK ENGINEERING</span><b>◇</b><span><i>⌬</i> CISCO</span><b>◇</b><span><i>⇄</i> ROUTING & SWITCHING</span><b>◇</b><span><i>⌨</i> PYTHON</span><b>◇</b><span><i>◈</i> AI AGENTS</span><b>◇</b><span><i>▱</i> FLUTTER</span><b>◇</b><span><i>⚙</i> IT SUPPORT</span><b>◇</b><span><i>⟲</i> AUTOMATION</span><b>◇</b>
 </div></div>
 <section class="section" id="about"><div class="wrap"><div class="section-heading"><div class="section-no">01 / PROFILE</div><h2 data-en="Curiosity meets<br>technical thinking." data-ar="فضول معرفي،<br>وتفكير تقني.">فضول معرفي،<br>وتفكير تقني.</h2><p data-en="A practical path across infrastructure, support, software and intelligent automation." data-ar="مسار عملي يجمع بين البنية التحتية والدعم الفني والبرمجيات والأتمتة الذكية.">مسار عملي يجمع بين البنية التحتية والدعم الفني والبرمجيات والأتمتة الذكية.</p></div>
 <div class="about-grid"><div class="panel"><p data-ar="أدرس تقنية المعلومات في جامعة تعز – فرع التربة. أعمل على تطوير قاعدة معرفية وعملية في شبكات الحاسوب، إدارة أنظمة التشغيل، الدعم الفني والبرمجة. يهمني فهم سبب المشكلة قبل معالجتها، وتصميم حلول يمكن الاعتماد عليها وتطويرها." data-en="I study Information Technology at Taiz University – Al-Turbah Branch. I am developing practical knowledge in computer networks, operating systems, IT support and programming. I value understanding the root cause before solving a problem, and designing solutions that can be maintained and improved.">أدرس تقنية المعلومات في جامعة تعز – فرع التربة. أعمل على تطوير قاعدة معرفية وعملية في شبكات الحاسوب، إدارة أنظمة التشغيل، الدعم الفني والبرمجة. يهمني فهم سبب المشكلة قبل معالجتها، وتصميم حلول يمكن الاعتماد عليها وتطويرها.</p></div>
@@ -244,12 +269,16 @@ function animateHeroName(){
 
 const themeBtn=document.getElementById('theme'),langBtn=document.getElementById('language'),menuBtn=document.getElementById('menu'),nav=document.getElementById('nav');
 let lang='ar';
+
+const whatsappLink=document.querySelector('.whatsapp-link');
+function updateWhatsAppLink(){if(!whatsappLink)return;const greeting=lang==='ar'?'مرحباً صلاح، وصلت إلى موقعك وأرغب في التواصل معك.':'Hello Salah, I found your portfolio and would like to get in touch.';whatsappLink.href='https://wa.me/967775899576?text='+encodeURIComponent(greeting);}
+
 function setTheme(value){body.dataset.theme=value;themeBtn.textContent=value==='dark'?'☼':'◐';try{localStorage.setItem('salah-theme',value)}catch(e){}}
 try{setTheme(localStorage.getItem('salah-theme')||'dark')}catch(e){setTheme('dark')}
 themeBtn.addEventListener('click',()=>setTheme(body.dataset.theme==='dark'?'light':'dark'));
-function setLanguage(next){lang=next;const ar=next==='ar';htmlEl.lang=next;htmlEl.dir=ar?'rtl':'ltr';document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.innerHTML=el.dataset[next]);langBtn.textContent=ar?'EN':'عربي';document.title=ar?'صلاح الأصبحي | الملف التقني':'Salah Al-Asbahi | Technical Portfolio';animateHeroName();}
+function setLanguage(next){lang=next;updateWhatsAppLink();const ar=next==='ar';htmlEl.lang=next;htmlEl.dir=ar?'rtl':'ltr';document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.innerHTML=el.dataset[next]);langBtn.textContent=ar?'EN':'عربي';document.title=ar?'صلاح الأصبحي | الملف التقني':'Salah Al-Asbahi | Technical Portfolio';animateHeroName();}
 langBtn.addEventListener('click',()=>setLanguage(lang==='ar'?'en':'ar'));
-animateHeroName();
+animateHeroName();updateWhatsAppLink();
 menuBtn.addEventListener('click',()=>{nav.classList.toggle('open');menuBtn.textContent=nav.classList.contains('open')?'✕':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.getElementById('year').textContent=new Date().getFullYear();
